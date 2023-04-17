@@ -1,0 +1,71 @@
+[project]
+# Assets
+AssetsToClientDir = "A_MANAGEMENT/07_ASSETS_TO_CLIENT"
+
+# Dirs in a project root
+PreProdDir  = "C_PRE_PRODUCTION"
+3DProdDir   = "D_3D_PRODUCTION"
+2DProdDir   = "E_2D_PRODUCTION"
+PostProdDir = "F_POST_PRODUCTION"
+DailiesDir  = "G_DAILIES"
+
+# Dirs inside 3DProdDir and 2DProdDir
+ShotsDir = "03_SHOTS"
+AssetsDir  = "01_MASTER_ASSETS"
+
+# Dirs inside 2D shot dir -
+# 2DFootageDir Added 08/06/2015 from job ID 0097
+2DScriptsDir  = "01_SCRIPTS"
+2DRendersDir  = "02_RENDERS"
+2DElementsDir = "03_ELEMENTS"
+2DPreviewsDir = "04_PREVIEWS"
+2DFootageDir  = "05_FOOTAGE"
+2DOutputsDir  = "06_OUTPUTS"
+
+# Dirs inside 3D shot dir
+3DScenesDir  = "00_SCENES"
+3DMapsDir  = "01_MAPS"
+3DCachesDir = "02_CACHES"
+3DExportDir = "03_EXPORT"
+
+# Published dir inside 2DOutputsDir
+PublishedDir = "_Published"
+
+
+# trying to work out best toml file structure
+[project2]
+
+[project2.production3d]
+name = "D_3D_PRODUCTION"
+
+[project2.production2d]
+name = "E_2D_PRODUCTION"
+children = [
+    { name = "scenes", dir = "00_SCENES" },
+    { name = "maps", dir = "01_MAPS"},
+    { name = "caches", dir = "02_CACHES", children = [{name = "caches_proxies", dir = "01_PROXIES"}]},
+    { name = "exports", dir = "03_EXPORT"},
+]
+
+[project3]
+name = 'helloimproject3'
+
+[[project3.children]]
+name = "production3d"
+dir = "D_3D_PRODUCTION"
+children = [
+    { name = "scipts", dir = "00_SCRIPTS" },
+    { name = "renders", dir = "01_renders"},
+    { name = "elements", dir = "02_elements", children = [{name = "caches_proxies", dir = "01_PROXIES"}]},
+]
+
+[[project3.children]]
+name = "production2d"
+dir = "E_2D_PRODUCTION"
+children = [
+    { name = "scenes", dir = "00_SCENES" },
+    { name = "maps", dir = "01_MAPS"},
+    { name = "caches", dir = "02_CACHES", children = [{name = "caches_proxies", dir = "01_PROXIES"}]},
+    { name = "exports", dir = "03_EXPORT"},
+]
+
