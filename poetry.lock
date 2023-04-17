@@ -165,6 +165,18 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
+
+[[package]]
 name = "types-pyside2"
 version = "5.15.2.1.3"
 description = "The most accurate stubs for PySide2"
@@ -280,4 +292,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.7"
-content-hash = "8af56d738ab2bafb04c9607a14a2d2f8b5c7838ddff65e8435e9ff2397a36e4e"
+content-hash = "2d3f3ea20ebf2470d55abb8b3287b83d22511b8bdad398e5d88f3e5423ee6b97"
