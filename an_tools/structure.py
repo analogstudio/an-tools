@@ -95,7 +95,7 @@ class Structure:
 
     def get_3dshots_dirname(self):
         """Returns a string for the folder name of the parent of all the shot folders i.e 03_SHOTS"""
-        return self.config.get('project', 'ShotsDir')
+        return self.config.get('project').get('ShotsDir')
 
     def get_projects_root(self):
         """replaces oProjectRoot"""
@@ -141,19 +141,19 @@ class Structure:
         return 'B_DATA'
 
     def get_prod_pre(self):
-        return self.config.get('project', 'PreProdDir')
+        return self.config.get('project').get('PreProdDir')
 
     def get_prod_3d(self):
-        return self.config.get('project', '3DProdDir')
+        return self.config.get('project').get('3DProdDir')
 
     def get_prod_2d(self):
-        return self.config.get('project', '2DProdDir')
+        return self.config.get('project').get('2DProdDir')
 
     def get_prod_post(self):
-        return self.config.get('project', 'PostProdDir')
+        return self.config.get('project').get('PostProdDir')
 
     def get_prod_dailies(self):
-        return self.config.get('project', 'DailiesDir')
+        return self.config.get('project').get('DailiesDir')
 
     def get_prod_delivery(self):
         return 'H_DELIVERY'
@@ -186,12 +186,12 @@ class Structure:
         """
 
         shot_children_2d = {
-            'scripts' : self.config.get('project', '2DScriptsDir'),
-            'renders' : self.config.get('project', '2DRendersDir'),
-            'elements' : self.config.get('project', '2DElementsDir'),
-            'outputs' : self.config.get('project', '2DOutputsDir'),
-            'previews' : self.config.get('project', '2DPreviewsDir'),
-            'footage' :  self.config.get('project', '2DFootageDir')
+            'scripts' : self.config.get('project').get('2DScriptsDir'),
+            'renders' : self.config.get('project').get('2DRendersDir'),
+            'elements' : self.config.get('project').get('2DElementsDir'),
+            'outputs' : self.config.get('project').get('2DOutputsDir'),
+            'previews' : self.config.get('project').get('2DPreviewsDir'),
+            'footage' :  self.config.get('project').get('2DFootageDir')
         }
 
         return shot_children_2d
@@ -204,10 +204,10 @@ class Structure:
         """
 
         shot_children_3d = {
-            'scenes' : self.config.get('project', '3DScenesDir'),
-            'maps' : self.config.get('project', '3DMapsDir'),
-            'caches' : self.config.get('project', '3DCachesDir'),
-            'exports' : self.config.get('project', '3DExportDir'),
+            'scenes' : self.config.get('project').get('3DScenesDir'),
+            'maps' : self.config.get('project').get('3DMapsDir'),
+            'caches' : self.config.get('project').get('3DCachesDir'),
+            'exports' : self.config.get('project').get('3DExportDir'),
         }
 
         return shot_children_3d
@@ -219,12 +219,12 @@ class Structure:
 
         prod_children_3d = {
             'assets' : self.get_3dasset_dirname(),
-            # 'sculpting' : self.config.get('project', '3DMapsDir'),
+            # 'sculpting' : self.config.get('project').get('3DMapsDir'),
             'shots' : self.get_3dshots_dirname()
-            # 'tracking' : self.config.get('project', '3DExportDir'),
-            # 'shaders' : self.config.get('project', '3DExportDir'),
-            # 'maps' : self.config.get('project', '3DExportDir'),
-            # 'misc' : self.config.get('project', '3DExportDir'),
+            # 'tracking' : self.config.get('project').get('3DExportDir'),
+            # 'shaders' : self.config.get('project').get('3DExportDir'),
+            # 'maps' : self.config.get('project').get('3DExportDir'),
+            # 'misc' : self.config.get('project').get('3DExportDir'),
         }
 
         return prod_children_3d
