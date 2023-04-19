@@ -13,6 +13,13 @@ DailiesDir  = "G_DAILIES"
 ShotsDir = "03_SHOTS"
 AssetsDir  = "01_MASTER_ASSETS"
 
+# Dirs inside 3DProdDir Only
+# TODO
+
+[project.2d]
+# Dirs inside 2DProdDir Only
+GlobalElements = "00_GLOBALELEMENTS"
+
 # Dirs inside 2D shot dir -
 # 2DFootageDir Added 08/06/2015 from job ID 0097
 2DScriptsDir  = "01_SCRIPTS"

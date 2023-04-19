@@ -97,6 +97,18 @@ class Structure:
         """Returns a string for the folder name of the parent of all the shot folders i.e 03_SHOTS"""
         return self.config.get('project').get('ShotsDir')
 
+    def get_2dasset_dirname(self):
+        """Returns a string for the folder name where the 3dassets live ie. 01_MASTER_ASSETS"""
+        return self.config.get('project').get('AssetsDir')
+    
+    def get_2dshots_dirname(self):
+        """Returns a string for the folder name of the parent of all the shot folders i.e 03_SHOTS"""
+        return self.config.get('project').get('ShotsDir')
+    
+    def get_2d_globalelements_dirname(self):
+        """Returns a string for the folder name of the parent of all the shot folders i.e 03_SHOTS"""
+        return self.config.get('project').get('2d').get('GlobalElementsDir')
+    
     def get_projects_root(self):
         """replaces oProjectRoot"""
 
@@ -182,7 +194,13 @@ class Structure:
         Returns a dict providing names of folders
 
         Used to require ProjectIndex, now assume the latest structure version by using 9999
-         - 2019 now return a dict
+        Returns dict with keys:
+         - scripts
+         - renders
+         - elements
+         - outputs
+         - previews
+         - footage
         """
 
         shot_children_2d = {
@@ -228,3 +246,16 @@ class Structure:
         }
 
         return prod_children_3d
+
+    def get_prod_children_2d(self, project_index=9999):
+        """
+        Returns a dict providing names of folders
+        """
+
+        prod_children_2d = {
+            'assets' : self.get_2dasset_dirname(),
+            'shots' : self.get_2dshots_dirname(),
+            'global_elements' : self.get_2d_globalelements_dirname()
+        }
+
+        return prod_children_2d
