@@ -89,6 +89,10 @@ class Structure:
         """Returns the string that prefixes a shot ie. 'Shot'_001"""
         return 'Shot'
 
+    def get_shot_published_dirname(self):
+        """Returns a string for the folder name for published shot sequences ie. _Published"""
+        return self.config.get('Project').get('PublishedDir')
+    
     def get_3dasset_dirname(self):
         """Returns a string for the folder name where the 3dassets live ie. 01_MASTER_ASSETS"""
         return self.config.get('project').get('AssetsDir')
