@@ -107,7 +107,7 @@ class Structure:
     
     def get_2d_globalelements_dirname(self):
         """Returns a string for the folder name of the parent of all the shot folders i.e 03_SHOTS"""
-        return self.config.get('project').get('2d').get('GlobalElementsDir')
+        return self.config.get('project').get('GlobalElementsDir')
     
     def get_projects_root(self):
         """replaces oProjectRoot"""

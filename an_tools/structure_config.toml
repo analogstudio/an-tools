@@ -16,7 +16,6 @@ AssetsDir  = "01_MASTER_ASSETS"
 # Dirs inside 3DProdDir Only
 # TODO
 
-[project.2d]
 # Dirs inside 2DProdDir Only
 GlobalElements = "00_GLOBALELEMENTS"
 
