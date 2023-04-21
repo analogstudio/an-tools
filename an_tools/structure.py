@@ -233,6 +233,22 @@ class Structure:
         }
 
         return shot_children_3d
+    
+    def get_asset_children_3d(self, project_index=9999):
+        """
+        Returns a dict providing names of folders
+
+        This used to not even be in the ini file so I added them there too
+        """
+
+        asset_children_3d = {
+            'scenes' : self.config.get('project').get('3DScenesDir'),
+            'maps' : self.config.get('project').get('3DMapsDir'),
+            'caches' : self.config.get('project').get('3DCachesDir'),
+            'exports' : self.config.get('project').get('3DExportDir'),
+        }
+
+        return asset_children_3d
 
     def get_prod_children_3d(self, project_index=9999):
         """
