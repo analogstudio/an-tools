@@ -17,7 +17,7 @@ AssetsDir  = "01_MASTER_ASSETS"
 # TODO
 
 # Dirs inside 2DProdDir Only
-GlobalElements = "00_GLOBALELEMENTS"
+GlobalElementsDir = "00_GLOBALELEMENTS"
 
 # Dirs inside 2D shot dir -
 # 2DFootageDir Added 08/06/2015 from job ID 0097
